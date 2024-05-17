@@ -655,9 +655,10 @@
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
                     data.data.forEach(job => {
-                        const jobElement = document.createElement('div');
-                        jobElement.className = 'job-item p-4 mb-4';
-                        jobElement.innerHTML = `
+                        if (job.active) {
+                            const jobElement = document.createElement('div');
+                            jobElement.className = 'job-item p-4 mb-4';
+                            jobElement.innerHTML = `
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                 <div class="text-start ps-4">
@@ -674,7 +675,8 @@
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
                         </div>`;
-                        jobsContainer.appendChild(jobElement);
+                            jobsContainer.appendChild(jobElement);
+                        }
                     });
                 })
                 .catch(error => {
