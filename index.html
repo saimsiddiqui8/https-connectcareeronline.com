@@ -46,8 +46,8 @@
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-5 px-4 px-lg-5">
-                <img class="py-4" src="./img/logo.png" width="100px" alt="">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
+                <img class="py-4" src="./img/logo.png" width="80px" alt="">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -237,7 +237,7 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white footer pt-5 mt-5 wow fadeIn " data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark text-white footer  wow fadeIn " data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
@@ -248,15 +248,14 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="text-white mb-4">Contact</h5>
-                    <a href="https://www.facebook.com/groups/jobpostingandopportunites/">
+                    <a href="https://www.facebook.com/profile.php?id=61559389169275">
                         <p class="mb-2"><i class="fab fa-facebook me-3"></i>facebook/connectcareeronline</p>
                     </a>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>connectcareerservice@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" target="_blank"
-                            href="https://www.facebook.com/groups/jobpostingandopportunites/"><i
+                            href="https://www.facebook.com/profile.php?id=61559389169275"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -334,13 +333,20 @@
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                 <div class="d-flex mb-3">
-                                    <a class="btn primary-blue text-white" target="_blank" href="${job.applyNow}">Apply Now</a>
+                                    <button class="btn primary-blue text-white apply-now-btn" data-id="${job._id}">Apply Now</button>
                                 </div>
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
                         </div>`;
                             jobsContainer.appendChild(jobElement);
                         }
+                    });
+                    const applyNowButtons = document.querySelectorAll('.apply-now-btn');
+                    applyNowButtons.forEach(button => {
+                        button.addEventListener('click', (event) => {
+                            const jobId = event.target.getAttribute('data-id');
+                            window.location.href = `job-detail.html?id=${jobId}`;
+                        });
                     });
                 })
                 .catch(error => {
