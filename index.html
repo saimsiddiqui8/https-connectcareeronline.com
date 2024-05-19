@@ -345,7 +345,7 @@
                     applyNowButtons.forEach(button => {
                         button.addEventListener('click', (event) => {
                             const jobId = event.target.getAttribute('data-id');
-                            window.location.href = `job-detail.html?id=${jobId}`;
+                            window.location.href = `job-detail?id=${jobId}`;
                         });
                     });
                 })
