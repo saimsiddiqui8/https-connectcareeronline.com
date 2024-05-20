@@ -353,7 +353,7 @@
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
                     jobsContainer.innerHTML = '';
-                    if (data.data.length === 0) {
+                    if (data.message == "No Jobs Found") {
                         jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
                     } else {
                         data.data.forEach(job => {
