@@ -333,7 +333,7 @@
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                 <div class="d-flex mb-3">
-                                    <a class="btn primary-blue text-white apply-now-btn" target="_blank" data-id="${job._id}">Apply Now</a>
+                                    <button class="btn primary-blue text-white apply-now-btn" target= data-id="${job._id}" onclick="openInNewTab('${job._id}')">Apply Now</button>
                                 </div>
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
@@ -376,8 +376,8 @@
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                 <div class="d-flex mb-3">
-                                    <a class="btn primary-blue text-white apply-now-btn" target="_blank" data-id="${job._id}">Apply Now</a>
-                                       </div>
+                                    <button class="btn primary-blue text-white apply-now-btn" target="_blank" data-id="${job._id}">Apply Now</button>
+                                </div>
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
                         </div>`;
@@ -390,6 +390,12 @@
                 });
         }
     </script>
+    <script>
+        function openInNewTab(jobId) {
+            const url = `https://your-website.com/apply/${jobId}`; // Replace with your actual URL pattern
+            window.open(url, '_blank');
+        }
+        </script>
 </body>
 
 </html>
