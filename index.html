@@ -307,7 +307,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             fetchFullTimeJobs();
             fetchPartTimeJobs();
-
+            
         });
 
         function fetchFullTimeJobs() {
@@ -333,7 +333,7 @@
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                 <div class="d-flex mb-3">
-                                    <button class="btn primary-blue text-white apply-now-btn" target= data-id="${job._id}">Apply Now</button>
+                                    <button class="btn primary-blue text-white apply-now-btn" data-id="${job._id}">Apply Now</button>
                                 </div>
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
@@ -369,14 +369,14 @@
                                     <h5 class="mb-3">${job.title} - ${job.category}</h5>
                                     <span class="text-truncate me-3"><i class="fa fa-map-marker-alt secondary-color-blue me-2"></i>${job.location.city}, ${job.location.country}</span>
                                     <span class="text-truncate me-3"><i class="far fa-clock secondary-color-blue me-2"></i>${job.jobType}</span>
-                                    <span class="text-truncate me-3"><i class="fas fa-user-tie secondary-color-blue me-2"></i>${job.careerLevel}</span>
+                                    <span class="text-truncate me-3"><i class=" fa-user-tie secondary-color-blue me-2"></i>${job.careerLevel}</span>
                                     <span class="text-truncate me-0"><i class="far fa-money-bill-alt secondary-color-blue me-2"></i>${job.wages}</span>
                                     <p class="mt-3">${job.description}</p>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                 <div class="d-flex mb-3">
-                                    <button class="btn primary-blue text-white apply-now-btn" target="_blank" data-id="${job._id}">Apply Now</button>
+                                    <a class="btn primary-blue text-white" target="_blank" href="${job.applyNow}">Apply Now</a>
                                 </div>
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
@@ -390,12 +390,6 @@
                 });
         }
     </script>
-    <script>
-        function openInNewTab(jobId) {
-            const url = `https://your-website.com/apply/${jobId}`; // Replace with your actual URL pattern
-            window.open(url, '_blank');
-        }
-        </script>
 </body>
 
 </html>
