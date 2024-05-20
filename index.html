@@ -352,7 +352,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
-                    jobsContainer.innerHTML = ''; // Clear previous job listings
+                    jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>'; // Clear previous job listings
                     data.data.forEach(job => {
                         if (job.active && job.jobType == "FULL-TIME") {
                             const jobElement = document.createElement('div');
