@@ -162,6 +162,12 @@
                             </a>
                         </li>
                     </ul>
+                    <div id="spinner2"
+                        class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                        <div class="spinner-border primary-color-blue" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
                     <div class="tab-content">
                         <div id="tab-2" class="tab-pane fade show p-0 active">
                         </div>
@@ -334,7 +340,7 @@
     </script>
     <script>
         document.getElementById('searchButton').addEventListener('click', function () {
-            document.getElementById('spinner').classList.add('show');
+            document.getElementById('spinner2').classList.add('show');
 
             const keyword = document.getElementById('keyword').value;
             const location = document.getElementById('location').value;
@@ -390,11 +396,11 @@
                 })
                 .catch(error => console.error('Error fetching jobs:', error))
                 .finally(() => {
-                // Hide the spinner after 2 seconds
-                setTimeout(() => {
-                    document.getElementById('spinner').classList.remove('show');
-                }, 1000);
-            });
+                    // Hide the spinner2 after 2 seconds
+                    setTimeout(() => {
+                        document.getElementById('spinner2').classList.remove('show');
+                    }, 1000);
+                });
         });
 
     </script>
