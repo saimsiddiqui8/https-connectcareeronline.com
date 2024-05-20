@@ -334,7 +334,7 @@
     </script>
     <script>
         document.getElementById('searchButton').addEventListener('click', function () {
-            
+
             const keyword = document.getElementById('keyword').value;
             const location = document.getElementById('location').value;
             const careerLevel = document.getElementById('careerLevel').value;
@@ -352,12 +352,15 @@
                 .then(response => response.json())
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
-                    jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>'; // Clear previous job listings
-                    data.data.forEach(job => {
-                        if (job.active && job.jobType == "FULL-TIME") {
-                            const jobElement = document.createElement('div');
-                            jobElement.className = 'job-item p-4 mb-4';
-                            jobElement.innerHTML = `
+                    jobsContainer.innerHTML = '';
+                    if (data.data.length === 0) {
+                        jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
+                    } else {
+                        data.data.forEach(job => {
+                            if (job.active && job.jobType == "FULL-TIME") {
+                                const jobElement = document.createElement('div');
+                                jobElement.className = 'job-item p-4 mb-4';
+                                jobElement.innerHTML = `
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                 <div class="text-start ps-4">
@@ -376,17 +379,19 @@
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
                         </div>`;
-                            jobsContainer.appendChild(jobElement);
-                        }
-                    });
-                    const applyNowButtons = document.querySelectorAll('.apply-now-btn');
-                    applyNowButtons.forEach(button => {
-                        button.addEventListener('click', (event) => {
-                            const jobId = event.target.getAttribute('data-id');
-                            window.location.href = `job-detail?id=${jobId}`;
+                                jobsContainer.appendChild(jobElement);
+                            }
                         });
-                    });
+                        const applyNowButtons = document.querySelectorAll('.apply-now-btn');
+                        applyNowButtons.forEach(button => {
+                            button.addEventListener('click', (event) => {
+                                const jobId = event.target.getAttribute('data-id');
+                                window.location.href = `job-detail?id=${jobId}`;
+                            });
+                        });
+                    }
                 })
+
                 .catch(error => console.error('Error fetching jobs:', error));
         });
 
