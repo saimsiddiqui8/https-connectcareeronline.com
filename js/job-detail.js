@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to update the page content with the fetched job details
     function updateJobDetails(job) {
         if (!job) return;
-        console.log(job.title)
+        console.log(job.applyNow)
         document.getElementById("job-titles").textContent = job.title;
         document.getElementById("job-location").textContent = `${job.location.city}, ${job.location.country}`;
         document.getElementById("job-type").textContent = job.jobType;
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("job-summary").textContent = `Published On: ${new Date(job.createdAt).toLocaleDateString()}`;
         document.getElementById("job-nature").textContent = `Job Nature: ${job.jobType}`;
         document.getElementById("job-salary-summary").textContent = `Salary: ${job.wages}`;
-        document.getElementById("job-location-summary").textContent = `Location: ${job.location.city}, ${job.location.country}`;
+        // document.getElementById("job-location-summary").textContent = `Location: ${job.location.city}, ${job.location.country}`;
         const applyNowButton = document.getElementById("applyNow");
         applyNowButton.href = job.applyNow;
     }
