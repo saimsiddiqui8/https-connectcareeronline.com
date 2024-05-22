@@ -322,7 +322,7 @@
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                 <div class="d-flex mb-3">
-                                    <a class="btn primary-blue text-white" target="_blank" href="${job.applyNow}">Apply Now</a>
+                                    <button class="btn primary-blue text-white apply-now-btn" data-id="${job._id}">Apply Now</button>
                                 </div>
                                 <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.createdAt).toLocaleDateString()}</small>
                             </div>
