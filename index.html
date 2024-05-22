@@ -305,7 +305,7 @@
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-3');
                     data.data.forEach(job => {
-                        if (job.active && job.jobType == "PART-TIME" && job.jobType == "FULL TIME / PART TIME") {
+                        if (job.active && job.jobType == "PART-TIME" && job.jobType == "FULL TIME / PART TIME ") {
                             const jobElement = document.createElement('div');
                             jobElement.className = 'job-item p-4 mb-4';
                             jobElement.innerHTML = `
@@ -361,7 +361,7 @@
                         jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
                     } else {
                         data.data.forEach(job => {
-                            if (job.active && job.jobType == "FULL-TIME" && job.jobType == "FULL TIME / PART TIME") {
+                            if (job.active && job.jobType == "FULL-TIME" && job.jobType == "FULL TIME / PART TIME ") {
                                 const jobElement = document.createElement('div');
                                 jobElement.className = 'job-item p-4 mb-4';
                                 jobElement.innerHTML = `
