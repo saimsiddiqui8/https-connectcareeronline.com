@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to update the page content with the fetched job details
     function updateJobDetails(job) {
         if (!job) return;
-        console.log(job.applyNow)
         document.getElementById("job-titles").textContent = job.title;
         document.getElementById("job-location").textContent = `${job.location.city}, ${job.location.country}`;
         document.getElementById("job-type").textContent = job.jobType;

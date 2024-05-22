@@ -186,9 +186,9 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link text-white" href="">Contact Us</a>
-                    <a class="btn btn-link text-white" href="">Jobs in English</a>
-                    <a class="btn btn-link text-white" href="">Jobs in German</a>
+                    <a class="btn btn-link text-white" href="contact">Contact Us</a>
+                    <a class="btn btn-link text-white" href="job-in-english">Jobs in English</a>
+                    <a class="btn btn-link text-white" href="job-auf-Deutsch">Jobs in German</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="text-white mb-4">Contact</h5>
@@ -223,8 +223,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Contact</a>
+                            <a href="/">Home</a>
+                            <a href="/contact">Contact</a>
                         </div>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-3');
                     data.data.forEach(job => {
-                        if (job.active && job.jobType == "PART-TIME") {
+                        if (job.active && job.jobType == "PART-TIME" && job.jobType == "FULL TIME / PART TIME") {
                             const jobElement = document.createElement('div');
                             jobElement.className = 'job-item p-4 mb-4';
                             jobElement.innerHTML = `
@@ -347,7 +347,7 @@
             // Construct the query parameters
             const params = new URLSearchParams();
             if (keyword) params.append('keyword', keyword);
-            if (location && location !== 'Location') params.append('location', location);
+            if (location && location !== 'Location') params.append('location', location.toUpperCase());
             if (careerLevel && careerLevel !== 'Career Level') params.append('careerLevel', careerLevel);
             if (category && category !== 'Category') params.append('category', category);
 
@@ -361,7 +361,7 @@
                         jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
                     } else {
                         data.data.forEach(job => {
-                            if (job.active && job.jobType == "FULL-TIME") {
+                            if (job.active && job.jobType == "FULL-TIME" && job.jobType == "FULL TIME / PART TIME") {
                                 const jobElement = document.createElement('div');
                                 jobElement.className = 'job-item p-4 mb-4';
                                 jobElement.innerHTML = `
