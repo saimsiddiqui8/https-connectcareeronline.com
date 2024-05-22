@@ -258,7 +258,7 @@
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
                     data.data.forEach(job => {
-                        if (job.active && job.jobType == "Vollzeit" && job.language == "German") {
+                        if (job.active && job.jobType == "VOLLZEIT" && job.language == "German") {
                             const jobElement = document.createElement('div');
                             jobElement.className = 'job-item p-4 mb-4';
                             jobElement.innerHTML = `
@@ -301,7 +301,7 @@
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-3');
                     data.data.forEach(job => {
-                        if (job.active && job.jobType == "Teilzeit" && job.language == "German") {
+                        if (job.active && job.jobType == "TEILZEIT" && job.language == "German") {
                             const jobElement = document.createElement('div');
                             jobElement.className = 'job-item p-4 mb-4';
                             jobElement.innerHTML = `
