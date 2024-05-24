@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Find Your Dream Job in Germany | Part Time and Full Time</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="google-site-verification" content="0DGK_BkD0VsEBlrXQwxmgOQ-K6Md9ZQhEuaIjejb4U0">
     <meta name="keywords"
         content="Jobs in Germany, Part-time job in Germany, Job openings in Germany, Part-time job in German, Best paid job in Germany, Job search in Germany">
     <meta name="description"
@@ -72,7 +73,8 @@
         <!-- Navbar End -->
         <section>
             <h1 class="text-center mt-5"> Find your perfect job in Germany</h1>
-            <p class="text-center mt-3 mb-5 container">Browse the latest full-time and part-time job openings in Germany</p>
+            <p class="text-center mt-3 mb-5 container">Browse the latest full-time and part-time job openings in Germany
+            </p>
         </section>
 
         <!-- Search Start -->
@@ -166,6 +168,14 @@
                             </a>
                         </li>
                     </ul>
+                    <!-- <div id="spinner2" style="display: none;" class=" w-100 py-5 start-50 d-flex align-items-center justify-content-center">
+                        <div class="py-5">
+                            <div class="spinner-border primary-color-blue" style="width: 3rem; height: 3rem;"
+                                role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div> -->
                     <div class="tab-content">
                         <div id="tab-2" class="tab-pane fade show p-0 active">
                         </div>
@@ -261,6 +271,8 @@
                 .then(response => response.json())
                 .then(data => {
                     const jobsContainer = document.getElementById('tab-2');
+
+
                     data.data.forEach(job => {
                         if (job.active && job.jobType == "FULL-TIME") {
                             const jobElement = document.createElement('div');
@@ -287,6 +299,7 @@
                             jobsContainer.appendChild(jobElement);
                         }
                     });
+
                     const applyNowButtons = document.querySelectorAll('.apply-now-btn');
                     applyNowButtons.forEach(button => {
                         button.addEventListener('click', (event) => {
