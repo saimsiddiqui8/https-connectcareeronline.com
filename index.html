@@ -173,11 +173,11 @@
             <div class="container">
                 <h2 class="text-center mb-5 ">Job Listing</h2>
                 <div class="tab-class text-center ">
-                   
+
                     <div class="tab-content">
-                        <div id="tab-2" >
+                        <div id="tab-2">
                         </div>
-                       
+
                         <a class="btn primary-blue text-white py-3 px-5" href="">Browse More Jobs</a>
                     </div>
                 </div>
@@ -349,7 +349,7 @@
             searchJobs(keyword, location);
         });
         async function searchJobs(keyword, location) {
-            const url = `http://localhost:3000/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=10`;
+            const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=10`;
 
             try {
                 const response = await fetch(url);
