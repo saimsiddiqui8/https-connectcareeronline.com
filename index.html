@@ -178,8 +178,7 @@
                         <div id="tab-2">
                         </div>
 
-                        <a class="btn primary-blue text-white py-3 px-5" href="">Browse More Jobs</a>
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>
@@ -390,7 +389,7 @@
                         <div class="d-flex mb-3">
                             <a href="${job.url}" target="_blank" class="btn primary-blue text-white apply-now-btn">Apply Now</a>
                         </div>
-                        <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.postedAt).toLocaleDateString()}</small>
+                        <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.date_updated).toLocaleDateString()}</small>
                     </div>
                 </div>`;
                 jobsContainer.appendChild(jobElement);
