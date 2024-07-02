@@ -150,15 +150,9 @@
 
         // Load blog details based on ID parameter
         $(document).ready(function () {
-            const path = window.location.pathname;
-            const parts = path.split('/');
-            const metaTitle = parts[1]; // This assumes 'blog' is the first part and 'some-title' is the second part
-
-            // Use metaTitle as needed (e.g., fetch blog data based on this metaTitle)
-            console.log('Meta Title:', metaTitle);
-            const blogId = getParameterByName('id');
-            if (blogId) {
-                fetch(`https://api.connectcareeronline.com/api/v1/blogPost/get-blog-post/${blogId}`)
+            const fragment = window.location.hash.substring(1);
+            if (fragment) {
+                fetch(`https://api.connectcareeronline.com/api/v1/blogPost/title/${fragment}`)
                     .then(response => response.json())
                     .then(data => {
                         const blog = data.data;
