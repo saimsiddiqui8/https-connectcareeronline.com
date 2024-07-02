@@ -217,14 +217,14 @@
 
             blogCard.innerHTML = `
         <div class="card">
-            <a href="blog-detail.html?id=${blog._id}">
+            <a href="blog-detail.html/${blog.metaTitle}">
                 <img src="${imageUrl}" class="card-img-top" alt="${truncatedTitle}">
             </a>
             <div class="card-body">
                 <h5 class="card-title">${truncatedTitle}</h5>
                 <p class="card-text">${truncatedDescription}</p>
                 <div class="d-flex justify-content-between">
-                <a href="blog-detail.html?id=${blog._id}" class="text-white btn primary-blue">Read More</a>
+                <a href="blog-detail.html/${blog.metaTitle}" class="text-white btn primary-blue">Read More</a>
                 <small class="text-muted mt-2">Pulished ${formattedDate}</small>
             </div>
             </div>

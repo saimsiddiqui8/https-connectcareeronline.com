@@ -149,10 +149,18 @@
         }
 
         // Load blog details based on ID parameter
-        $(document).ready(function () {
-    const blogId = getParameterByName('id');
+       $(document).ready(function () {
+        function getTitleFromPath() {
+    const path = window.location.pathname;
+    const parts = path.split('/');
+    if (parts.length >= 3) {
+        return parts[2]; // Assuming 'remote-workers-in-germany' is the third part in the path
+    }
+    return null;
+}
+    const blogId = getTitleFromPath();
     if (blogId) {
-        fetch(`http://localhost:8000/api/v1/blogPost/get-blog-post/${blogId}`)
+        fetch(`http://localhost:8000/api/v1/blogPost/title/${blogId}`)
             .then(response => response.json())
             .then(data => {
                 const blog = data.data;
