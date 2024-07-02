@@ -89,7 +89,7 @@
                     <a href="job-auf-Deutsch" class="nav-item nav-link">Jobs In German - job auf Deutsch</a>
                     <a href="job-in-english" class="nav-item nav-link">Jobs In English</a>
                     <a href="contact" class="nav-item nav-link">Contact</a>
-                    <a href="blogs" class="nav-item nav-link">Blogs</a>
+                    <a href="student-corner" class="nav-item nav-link">Student Corner</a>
                 </div>
             </div>
         </nav>
@@ -216,20 +216,20 @@
             const imageUrl = blog.cover.length > 20 ? blog.cover : fallbackImageUrl;
 
             blogCard.innerHTML = `
-        <div class="card">
-            <a href="blog#${blog.metaTitle}">
-                <img src="${imageUrl}" class="card-img-top" alt="${truncatedTitle}">
-            </a>
-            <div class="card-body">
-                <h5 class="card-title">${truncatedTitle}</h5>
-                <p class="card-text">${truncatedDescription}</p>
-                <div class="d-flex justify-content-between">
-                <a href="blog/${blog.metaTitle}" class="text-white btn primary-blue">Read More</a>
-                <small class="text-muted mt-2">Pulished ${formattedDate}</small>
-            </div>
-            </div>
-        </div>
-    `;
+                <div class="card">
+                    <a href="student-corner#${blog.metaTitle}">
+                        <img src="${imageUrl}" class="card-img-top" alt="${truncatedTitle}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">${truncatedTitle}</h5>
+                        <p class="card-text">${truncatedDescription}</p>
+                        <div class="d-flex justify-content-between">
+                        <a href="student-corner/${blog.metaTitle}" class="text-white btn primary-blue">Read More</a>
+                        <small class="text-muted mt-2">Pulished ${formattedDate}</small>
+                    </div>
+                    </div>
+                </div>
+            `;
             return blogCard;
         }
 
