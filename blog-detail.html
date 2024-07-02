@@ -149,41 +149,34 @@
         }
 
         // Load blog details based on ID parameter
-       $(document).ready(function () {
-        function getTitleFromPath() {
-    const path = window.location.pathname;
-    const parts = path.split('/');
-    if (parts.length >= 3) {
-        return parts[2]; // Assuming 'remote-workers-in-germany' is the third part in the path
-    }
-    return null;
-}
-    const blogId = getTitleFromPath();
-    if (blogId) {
-        fetch(`http://localhost:8000/api/v1/blogPost/title/${blogId}`)
-            .then(response => response.json())
-            .then(data => {
-                const blog = data.data;
-                document.getElementById('blog-title').innerText = blog.title;
-                // Set the blog description content as HTML
-                document.getElementById('blog-description').innerHTML = blog.content;
-                // Set image source if available
-                if (blog.cover) {
-                    document.querySelector('.card-img-top').src = blog.cover;
-                    document.querySelector('.card-img-top').alt = blog.title;
-                }
-            })
-            .catch(error => console.error('Error fetching blog details:', error));
-    } else {
-        console.error('Blog ID not found in URL.');
-    }
+        $(document).ready(function () {
 
-    // Back to Blogs button event listener
-    document.getElementById('back-to-blogs').addEventListener('click', function (event) {
-        event.preventDefault();
-        window.history.back();
-    });
-});
+            const blogId = getParameterByName('id');
+            if (blogId) {
+                fetch(`http://localhost:8000/api/v1/blogPost/get-blog-post/${blogId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const blog = data.data;
+                        document.getElementById('blog-title').innerText = blog.title;
+                        // Set the blog description content as HTML
+                        document.getElementById('blog-description').innerHTML = blog.content;
+                        // Set image source if available
+                        if (blog.cover) {
+                            document.querySelector('.card-img-top').src = blog.cover;
+                            document.querySelector('.card-img-top').alt = blog.title;
+                        }
+                    })
+                    .catch(error => console.error('Error fetching blog details:', error));
+            } else {
+                console.error('Blog ID not found in URL.');
+            }
+
+            // Back to Blogs button event listener
+            document.getElementById('back-to-blogs').addEventListener('click', function (event) {
+                event.preventDefault();
+                window.history.back();
+            });
+        });
 
     </script>
 </body>
