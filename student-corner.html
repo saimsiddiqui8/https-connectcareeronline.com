@@ -97,7 +97,7 @@
 
         <section>
             <h1 class="text-center mt-5">Student Corner</h1>
-            <p class="text-center mt-3 mb-5 container">Explore our latest articles and updates</p>
+            <p class="text-center mt-3 mb-5 container">Read our latest articles and updates</p>
         </section>
 
         <!-- Blog Section Start -->
@@ -217,14 +217,14 @@
 
             blogCard.innerHTML = `
                 <div class="card">
-                    <a href="student-corner#${blog.metaTitle}">
+                    <a href="student-corners#${blog.metaTitle}">
                         <img src="${imageUrl}" class="card-img-top" alt="${truncatedTitle}">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title">${truncatedTitle}</h5>
                         <p class="card-text">${truncatedDescription}</p>
                         <div class="d-flex justify-content-between">
-                        <a href="student-corner#${blog.metaTitle}" class="text-white btn primary-blue">Read More</a>
+                        <a href="student-corners#${blog.metaTitle}" class="text-white btn primary-blue">Read More</a>
                         <small class="text-muted mt-2">Pulished ${formattedDate}</small>
                     </div>
                     </div>
