@@ -158,8 +158,13 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3">Search</button>
+                        <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3">
+                            <span id="buttonText">Search</span>
+                            <span id="buttonLoader" class="spinner-border spinner-border-sm d-none" role="status"
+                                aria-hidden="true"></span>
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -178,7 +183,7 @@
                         <div id="tab-2">
                         </div>
 
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,7 +350,19 @@
 
             const keyword = document.getElementById('keyword').value;
             const location = document.getElementById('location').value;
-            searchJobs(keyword, location);
+            // Show loader and disable button
+            const buttonText = document.getElementById('buttonText');
+            const buttonLoader = document.getElementById('buttonLoader');
+
+            buttonText.classList.add('d-none');
+            buttonLoader.classList.remove('d-none');
+            this.disabled = true;
+            searchJobs(keyword, location).finally(() => {
+                // Hide loader and enable button
+                buttonText.classList.remove('d-none');
+                buttonLoader.classList.add('d-none');
+                this.disabled = false;
+            });
         });
         async function searchJobs(keyword, location) {
             const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=10`;
