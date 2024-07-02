@@ -153,7 +153,7 @@
 
             const blogId = getParameterByName('id');
             if (blogId) {
-                fetch(`http://localhost:8000/api/v1/blogPost/get-blog-post/${blogId}`)
+                fetch(`https://api.connectcareeronline.com/api/v1/blogPost/get-blog-post/${blogId}`)
                     .then(response => response.json())
                     .then(data => {
                         const blog = data.data;
