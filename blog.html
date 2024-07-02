@@ -213,7 +213,7 @@
             blogCard.classList.add('col-md-3', 'mb-4');
 
             // Check if blog cover image exists, otherwise use fallback image
-            const imageUrl = blog.cover ? blog.cover : fallbackImageUrl;
+            const imageUrl = blog.cover.length > 20 ? blog.cover : fallbackImageUrl;
 
             blogCard.innerHTML = `
         <div class="card">
