@@ -109,7 +109,7 @@
 
                             <div class="col-md-6">
                                 <input type="text" id="location" class="form-control border-0 py-3"
-                                placeholder="Search by Location ..." />
+                                    placeholder="Search by Location ..." />
                             </div>
                             <!-- <div class="col-md-3">
                                 <select id="careerLevel" class="form-select border-0 py-3">
@@ -157,7 +157,7 @@
         <!-- Jobs Start -->
         <div class="container-xxl pb-5 pt-2">
             <div class="container">
-                <h2 class="text-center mb-5 ">Job Listing</h2>
+                <div id="jobListing"></div>
                 <div class="tab-class text-center ">
 
                     <div class="tab-content">
@@ -183,7 +183,8 @@
                         Frankfurt, Essen, Munich, Potsdam, Zurich, Dortmund, Walldorf, Darmstadt, Wuzuburg, and many
                         more.
                         We have listed jobs in Germany along with other jobs internationally.
-                        <br/> Embrace the future of job searching with Connectcareeronline.com, where your global career
+                        <br /> Embrace the future of job searching with Connectcareeronline.com, where your global
+                        career
                         begins.
                     </p>
                     <h5 class="text-white mb-4 mt-5">Quick Links</h5>
@@ -375,11 +376,15 @@
 
         function displayJobs(jobs) {
             const jobsContainer = document.getElementById('tab-2');
+            const jobListing = document.getElementById('jobListing');
             jobsContainer.innerHTML = '';
 
             if (jobs.length === 0) {
                 jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
                 return;
+            } else {
+                jobListing.innerHTML = '<h2 class="text-center mb-5 ">Job Listing</h2>';
+
             }
 
             jobs.forEach(job => {
