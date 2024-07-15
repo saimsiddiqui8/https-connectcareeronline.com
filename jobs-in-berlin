@@ -3,19 +3,6 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-P6FWXJPS');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G24JPCG117"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-G24JPCG117'); </script>
     <meta charset="utf-8">
     <title>Find Your Dream Job in Germany | Part Time and Full Time Jobs</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -48,7 +35,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="canonical" href="https://connectcareeronline.com/">
+    <link rel="canonical" href="https://connectcareeronline.com/job-in-berlin">
 
 </head>
 
@@ -91,8 +78,8 @@
 
         <!-- Navbar End -->
         <section>
-            <h1 class="text-center mt-5">Find your Perfect Job in Germany</h1>
-            <p class="text-center mt-3 mb-5 container">Browse the latest full-time and part-time job openings in Germany
+            <h1 class="text-center mt-5">Find your Perfect Job in Berlin</h1>
+            <p class="text-center mt-3 mb-5 container">Browse the latest full-time and part-time job openings in Berlin
             </p>
         </section>
 
@@ -106,36 +93,6 @@
                                 <input type="text" id="keyword" class="form-control border-0 py-3"
                                     placeholder="Search Job Category.." />
                             </div>
-
-                            <div class="col-md-6">
-                                <input type="text" id="location" class="form-control border-0 py-3"
-                                    placeholder="Search by Location ..." />
-                            </div>
-                            <!-- <div class="col-md-3">
-                                <select id="careerLevel" class="form-select border-0 py-3">
-                                    <option selected>Career Level</option>
-                                    <option value="Intermediate">Intermediate</option>
-                                    <option value="Senior">Senior</option>
-
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select id="category" class="form-select border-0 py-3">
-                                    <option selected>Category</option>
-                                    <option value="Software Development">Software Development</option>
-                                    <option value="IT Operations">IT Operations</option>
-                                    <option value="Data Science">Data Science</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Art & Design">Art & Design</option>
-                                    <option value="Management">Management</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <option value="Sales">Sales</option>
-                                    <option value="Operation & Administration">Operation & Administration</option>
-                                    <option value="Finance & Legal">Finance & Legal</option>
-                                    <option value="Top Executives">Top Executives</option>
-                                    <option value="Technician">Technician</option>
-                                </select>
-                            </div> -->
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -244,91 +201,7 @@
     <a href="#" class="btn btn-lg primary-blue text-white btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     </div>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "JobPosting",
-          "title": "Find Your Dream Job in Germany | Part Time and Full Time Jobs",
-          "description": "Find the best paid job in Germany with Connect Career Online. Browse part time and full time job openings in Germany. We offer job opportunities in Software Development, IT Operations, Data Science, Engineering, Art and Design, Management, Marketing, Sales, Operation and Administration, Legal and Finance, and Top Executives.",
-          "employmentType": ["FULL_TIME", "PART_TIME"],
-          "hiringOrganization": {
-            "@type": "Organization",
-            "name": "Connect Career Online",
-            "sameAs": "https://connectcareeronline.com/",
-            "logo": "https://connectcareeronline.com/img/logo.png"
-          },
-          "industry": [
-            "Software Development",
-            "IT Operations",
-            "Data Science",
-            "Engineering",
-            "Art and Design",
-            "Management",
-            "Marketing",
-            "Sales",
-            "Operation and Administration",
-            "Legal and Finance",
-            "Top Executives"
-          ],
-          "jobLocation": [
-            {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Berlin",
-                "postalCode": "10115",
-                "addressCountry": "DE"
-              }
-            },
-            {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Hamburg",
-                "postalCode": "20095",
-                "addressCountry": "DE"
-              }
-            },
-            {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Frankfurt",
-                "postalCode": "60311",
-                "addressCountry": "DE"
-              }
-            },
-            {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Cologne",
-                "postalCode": "50667",
-                "addressCountry": "DE"
-              }
-            },
-            {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Dortmund",
-                "postalCode": "44135",
-                "addressCountry": "DE"
-              }
-            },
-            {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Munich",
-                "postalCode": "80331",
-                "addressCountry": "DE"
-              }
-            }
-          ],
-          "url": "https://connectcareeronline.com/"
-        }
-        </script>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -344,7 +217,7 @@
         document.getElementById('searchButton').addEventListener('click', function () {
 
             const keyword = document.getElementById('keyword').value;
-            const location = document.getElementById('location').value;
+            const location = "berlin";
             // Show loader and disable button
             const buttonText = document.getElementById('buttonText');
             const buttonLoader = document.getElementById('buttonLoader');
@@ -357,6 +230,13 @@
                 buttonText.classList.remove('d-none');
                 buttonLoader.classList.add('d-none');
                 this.disabled = false;
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const defaultLocation = "berlin"; // Default location to search
+            const defaultKeyword = ""; // You can set a default keyword if needed
+
+            searchJobs(defaultKeyword, defaultLocation).finally(() => {
             });
         });
         async function searchJobs(keyword, location) {
