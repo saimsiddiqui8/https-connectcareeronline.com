@@ -170,7 +170,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Get the job title from the URL
             const urlParams = new URLSearchParams(window.location.search);
-            const jobTitle = urlParams.get('title');
+            const jobTitle = urlParams.get('jobId');
             
             if (jobTitle) {
                 fetch(`https://api.connectcareeronline.com/api/v1/job/job/search?title=${encodeURIComponent(jobTitle)}`)
