@@ -170,10 +170,13 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Get the job title from the URL
             const urlParams = new URLSearchParams(window.location.search);
-            const jobTitle = urlParams.get('jobId');
+            const jobId = urlParams.get('jobId');
             
-            if (jobTitle) {
-                fetch(`https://api.connectcareeronline.com/api/v1/job/job/search?title=${encodeURIComponent(jobTitle)}`)
+            if (jobId) {
+                // Decode jobId to handle encoded characters like %20 for spaces
+                const decodedJobId = decodeURIComponent(jobId);
+                
+                fetch(`https://api.connectcareeronline.com/api/v1/job/job/search?title=${encodeURIComponent(decodedJobId)}`)
                     .then(response => response.json())
                     .then(data => {
                         if (data && data.jobs && data.jobs.length > 0) {
@@ -196,9 +199,10 @@
                         document.querySelector('.container-xxl').innerHTML = '<p>There was an error fetching job details.</p>';
                     });
             } else {
-                document.querySelector('.container-xxl').innerHTML = '<p>No job title provided in the URL.</p>';
+                document.querySelector('.container-xxl').innerHTML = '<p>No job ID provided in the URL.</p>';
             }
         });
     </script>
+    
 </body>
 </html>
