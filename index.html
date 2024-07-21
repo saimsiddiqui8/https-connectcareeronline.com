@@ -360,7 +360,7 @@
             });
         });
         async function searchJobs(keyword, location) {
-            const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}`;
+            const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=10`;
 
             try {
                 const response = await fetch(url);
