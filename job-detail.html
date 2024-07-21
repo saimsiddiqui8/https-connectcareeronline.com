@@ -175,7 +175,7 @@
             if (jobId) {
                 // Decode jobId to handle encoded characters like %20 for spaces
                 const decodedJobId = decodeURIComponent(jobId);
-                
+                console.log(decodedJobId)
                 fetch(`https://api.connectcareeronline.com/api/v1/job/job/search?title=${encodeURIComponent(decodedJobId)}`)
                     .then(response => response.json())
                     .then(data => {
