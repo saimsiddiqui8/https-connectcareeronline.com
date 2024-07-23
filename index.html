@@ -45,7 +45,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="./style.css">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="canonical" href="https://connectcareeronline.com/">
@@ -88,69 +88,73 @@
                 </div>
             </div>
         </nav>
+        <div id="searchBox">
+            <section id="section">
 
-        <!-- Navbar End -->
-        <section>
-            <h1 class="text-center mt-5">Find your Perfect Job in Germany</h1>
-            <p class="text-center mt-3 mb-5 container">Browse the latest full-time and part-time job openings in Germany
-            </p>
-        </section>
+                <h1 class="text-center mt-5">Find your Perfect Job in <i><b style="color: #044175;"> Germany</b></i>
+                </h1>
+                <p class="text-center mt-3 mb-5 container" style="color: #2b3940;">Browse the latest full-time and
+                    part-time job openings in Germany
+                </p>
 
-        <!-- Search Start -->
-        <div class="container-sm primary-blue mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
-            <div class="container">
-                <div class="row g-2">
-                    <div class="col-md-8">
+
+                <!-- Search Start -->
+                <div class="container-sm primary-blue mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+                    <div class="container box1">
+
                         <div class="row g-2">
-                            <div class="col-md-6">
-                                <input type="text" id="keyword" class="form-control border-0 py-3"
-                                    placeholder="Search Job Category.." />
+                            <div class="col-md-8">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <input type="text" id="keyword" class="form-control border-0 py-3"
+                                            placeholder="Search Job Category.." />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <input type="text" id="location" class="form-control border-0 py-3"
+                                            placeholder="Search by Location ..." />
+                                    </div>
+                                    <!-- <div class="col-md-3">
+                                    <select id="careerLevel" class="form-select border-0 py-3">
+                                        <option selected>Career Level</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Senior">Senior</option>
+    
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="category" class="form-select border-0 py-3">
+                                        <option selected>Category</option>
+                                        <option value="Software Development">Software Development</option>
+                                        <option value="IT Operations">IT Operations</option>
+                                        <option value="Data Science">Data Science</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Art & Design">Art & Design</option>
+                                        <option value="Management">Management</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Sales">Sales</option>
+                                        <option value="Operation & Administration">Operation & Administration</option>
+                                        <option value="Finance & Legal">Finance & Legal</option>
+                                        <option value="Top Executives">Top Executives</option>
+                                        <option value="Technician">Technician</option>
+                                    </select>
+                                </div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3  searchBtn">
+                                    <span id="buttonText">Search</span>
+                                    <span id="buttonLoader" class="spinner-border spinner-border-sm d-none"
+                                        role="status" aria-hidden="true"></span>
+                                </button>
                             </div>
 
-                            <div class="col-md-6">
-                                <input type="text" id="location" class="form-control border-0 py-3"
-                                    placeholder="Search by Location ..." />
-                            </div>
-                            <!-- <div class="col-md-3">
-                                <select id="careerLevel" class="form-select border-0 py-3">
-                                    <option selected>Career Level</option>
-                                    <option value="Intermediate">Intermediate</option>
-                                    <option value="Senior">Senior</option>
-
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select id="category" class="form-select border-0 py-3">
-                                    <option selected>Category</option>
-                                    <option value="Software Development">Software Development</option>
-                                    <option value="IT Operations">IT Operations</option>
-                                    <option value="Data Science">Data Science</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Art & Design">Art & Design</option>
-                                    <option value="Management">Management</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <option value="Sales">Sales</option>
-                                    <option value="Operation & Administration">Operation & Administration</option>
-                                    <option value="Finance & Legal">Finance & Legal</option>
-                                    <option value="Top Executives">Top Executives</option>
-                                    <option value="Technician">Technician</option>
-                                </select>
-                            </div> -->
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3">
-                            <span id="buttonText">Search</span>
-                            <span id="buttonLoader" class="spinner-border spinner-border-sm d-none" role="status"
-                                aria-hidden="true"></span>
-                        </button>
-                    </div>
-
                 </div>
-            </div>
+            </section>
         </div>
         <!-- Search End -->
-
 
 
 
@@ -402,19 +406,14 @@
                     </div>
                     <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                     <div class="d-flex mb-3">
-                        <button data-job-id="${job.title}" class="btn primary-blue text-white apply-now-btn">Apply Now</button>
+                        <a href="${job.url}" target="_blank" class="btn primary-blue text-white apply-now-btn">Apply Now</a>
                     </div>
                     <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.date_updated).toLocaleDateString()}</small>
                     </div>
                 </div>`;
                 jobsContainer.appendChild(jobElement);
             });
-            document.querySelectorAll('.apply-now-btn').forEach(button => {
-                button.addEventListener('click', function () {
-                    const jobId = this.getAttribute('data-job-id');
-                    window.location.href = `/job-detail.html?jobId=${jobId}`;
-                });
-            });
+           
         }
     </script>
 </body>
