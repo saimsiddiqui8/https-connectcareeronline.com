@@ -2,6 +2,7 @@
     background-image: url('./img/codifyformatter.png');
     background-position: center;
     background-repeat: no-repeat;
+    padding: 50px;
     background-size: cover;
 }
 
@@ -9,6 +10,8 @@
     background-color: rgba(255, 255, 255, 0.411);
     border-radius: 10px;
     padding: 3px;
+    margin-left: 120px;
+    margin-right: 120px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: antiquewhite;
 }
@@ -54,6 +57,11 @@ input[type="text"] {
         padding: 30px;
     }
 
+    #section {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
     .box1 {
         padding: 10px;
     }
@@ -72,6 +80,10 @@ input[type="text"] {
     section {
         margin: 20px;
         padding: 10px;
+    }
+    #section {
+        margin-left: 1px;
+        margin-right: 1px;
     }
 
     .container-sm.primary-blue {
@@ -96,6 +108,10 @@ input[type="text"] {
 @media (max-width: 576px) {
     #searchBox {
         padding: 20px;
+    }
+    #section {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .box1 {
