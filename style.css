@@ -2,7 +2,7 @@
     background-image: url('./img/germany.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    padding: 50px;
+    /* padding: 50px; */
     background-size: cover;
 }
 /* 
@@ -15,7 +15,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: antiquewhite;
 } */
-
+.navbar-nav .nav-link {
+    font-family: 'Arial', sans-serif !important; 
+    font-weight: bold !important; 
+    text-transform: capitalize !important;
+    
+}
 .text-center.mt-5 {
     color: #2b3940;
 }
@@ -44,6 +49,12 @@ input[type="text"]  {
     margin-left: 10px;
     color: #747b7d;
     background-color: transparent;
+}
+
+.bottom-border {
+    margin-top: 5px; 
+    border-bottom: 1px solid #2b3940; 
+    padding: 0 2px;
 }
 
 
