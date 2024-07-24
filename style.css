@@ -15,6 +15,38 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: antiquewhite;
 } */
+
+/* Container for the search box and button */
+.container.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    padding: 20px; /* Add padding if needed */
+}
+
+/* Align items within rows */
+.row.g-2 {
+    width: 100%;
+}
+
+/* Ensure that columns take full width and center content */
+.col-md-8, .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items horizontally within columns */
+}
+
+/* Align items in the input fields and button */
+.form-control, .btn {
+    width: 100%; /* Ensure full width to fit in the column */
+    max-width: 500px; /* Optional: Set a max width for better appearance */
+}
+
+
+
+
+
 .navbar-nav .nav-link {
     font-family: 'Arial', sans-serif !important; 
     font-weight: bold !important; 
@@ -35,6 +67,7 @@
 .box1 {
     background-color: transparent;
     padding: 5px;
+    /* margin: auto; */
     /* border-radius: 10px !important; */
 }
 
@@ -63,7 +96,8 @@ input[type="text"]  {
     color: #fff;
     /* border: 2px solid #fff !important; */
     /* border-radius: 30px; */
-    width: 200px !important;
+    width: 300px !important;
+    font-size: 20px;
 }
 
 .searchBtn:hover {
