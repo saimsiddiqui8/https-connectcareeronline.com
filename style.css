@@ -2,9 +2,10 @@
     background-image: url('./img/germany.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    /* padding: 50px; */
+    padding-bottom: 40px;
     background-size: cover;
 }
+
 /* 
 #section {
     background-color: rgba(255, 255, 255, 0.411);
@@ -20,27 +21,58 @@
 .container.box1 {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    padding: 20px; /* Add padding if needed */
+    align-items: center;
+    padding-top: 20px;
+    justify-content: center;
 }
 
-/* Align items within rows */
 .row.g-2 {
     width: 100%;
 }
 
+#location {
+    border: none;
+    color: #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+    transition: background-color 0.3s ease;
+}
+
+#location:focus {
+    outline: none;
+    border-bottom: 2px solid #007bff;
+    /* Change color to your preference */
+    background-color: transparent;
+}
+#keyword {
+    border: none;
+    color: #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+    transition: background-color 0.3s ease;
+}
+
+#keyword:focus {
+    outline: none;
+    border-bottom: 2px solid #007bff;
+    /* Change color to your preference */
+    background-color: transparent;
+}
+
 /* Ensure that columns take full width and center content */
-.col-md-8, .col-md-4 {
+.col-md-8,
+.col-md-4 {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center-align items horizontally within columns */
+    align-items: center;
+    /* Center-align items horizontally within columns */
 }
 
 /* Align items in the input fields and button */
-.form-control, .btn {
-    width: 100%; /* Ensure full width to fit in the column */
-    max-width: 500px; /* Optional: Set a max width for better appearance */
+.form-control,
+.btn {
+    width: 100%;
+    /* Ensure full width to fit in the column */
+    max-width: 500px;
+    /* Optional: Set a max width for better appearance */
 }
 
 
@@ -48,11 +80,12 @@
 
 
 .navbar-nav .nav-link {
-    font-family: 'Arial', sans-serif !important; 
-    font-weight: bold !important; 
+    font-family: 'Arial', sans-serif !important;
+    font-weight: bold !important;
     text-transform: capitalize !important;
-    
+
 }
+
 .text-center.mt-5 {
     color: #2b3940;
 }
@@ -71,22 +104,23 @@
     /* border-radius: 10px !important; */
 }
 
-input[type="text"]  {
+input[type="text"] {
     background-color: transparent;
     color: black;
-    
+
     /* border-radius: 20px;  */
-     /* border: 1px solid #044175 !important;  */
+    /* border: 1px solid #044175 !important;  */
 }
-.suggestions{
+
+.suggestions {
     margin-left: 10px;
-    color: #747b7d;
+    color: #000000;
     background-color: transparent;
 }
 
 .bottom-border {
-    margin-top: 5px; 
-    border-bottom: 1px solid #2b3940; 
+    margin-top: 5px;
+    border-bottom: 1px solid #2b3940;
     padding: 0 2px;
 }
 
@@ -133,6 +167,7 @@ input[type="text"]  {
         margin: 20px;
         padding: 10px;
     }
+
     #section {
         margin-left: 1px;
         margin-right: 1px;
@@ -161,6 +196,7 @@ input[type="text"]  {
     #searchBox {
         padding: 20px;
     }
+
     #section {
         margin-left: 10px;
         margin-right: 10px;
