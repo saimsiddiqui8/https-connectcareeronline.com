@@ -103,28 +103,22 @@
                 <!-- <div id="Searchinput"> -->
                 <div class="container-sm primary-blue mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
                     <div class="container box1">
-
-                        <div class="row g-2">
-                            <div class="col-md-8 ">
-                                <div class="row g-2">
-                                    <div class="col-md-6">
-                                        <input type="text" id="keyword" class="form-control border-0 py-3"
-                                            placeholder="Search Job Category.." />
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <input type="text" id="location" class="form-control border-0 py-3"
-                                            placeholder="Search by Location ..." />
-                                    </div>
-                                    <div class="bottom-border"></div>
-
-                                    <div class="suggestions ">
-                                        <div class="col-12 ">
-                                            <p>Trending Keywords: &nbsp; &nbsp;<span class="trending-keywords">Software
-                                                    Engineer, Graphic Designer, Game Developer</span></p>
+                        <div class="container">
+                            <div class="row g-2">
+                                <div class="col-md-8 ">
+                                    <div class="row g-2">
+                                        <div class="col-md-6">
+                                            <input type="text" id="keyword" class="form-control border-0 py-3"
+                                                placeholder="Search Job Category.." />
                                         </div>
-                                    </div>
-                                    <!-- <div class="col-md-3">
+
+                                        <div class="col-md-6">
+                                            <input type="text" id="location" class="form-control border-0 py-3"
+                                                placeholder="Search by Location ..." />
+                                        </div>
+
+
+                                        <!-- <div class="col-md-3">
                                     <select id="careerLevel" class="form-select border-0 py-3">
                                         <option selected>Career Level</option>
                                         <option value="Intermediate">Intermediate</option>
@@ -149,27 +143,31 @@
                                         <option value="Technician">Technician</option>
                                     </select>
                                 </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3  searchBtn">
+                                        <i class="fa-solid fa-magnifying-glass" style="padding-right: 10px;"></i> <span
+                                            id="buttonText"> Search</span>
+                                        <span id="buttonLoader" class="spinner-border spinner-border-sm d-none"
+                                            role="status" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <div class="suggestions ">
+
+                                    <p>Trending Keywords: &nbsp; &nbsp;<span class="trending-keywords">Software
+                                            Engineer, Graphic Designer, Game Developer</span></p>
                                 </div>
                             </div>
-                            <div class="col-md-4 ">
-                                <button id="searchButton" class="btn btn-secondary border-0 w-100 py-3  searchBtn">
-                                    <i class="fa-solid fa-magnifying-glass" style="padding-right: 10px;"></i> <span
-                                        id="buttonText"> Search</span>
-                                    <span id="buttonLoader" class="spinner-border spinner-border-sm d-none"
-                                        role="status" aria-hidden="true"></span>
-                                </button>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        <!-- Search End -->
-
-
-
     </div>
+    <!-- Search End -->
+
+
     <!-- Jobs Start -->
     <div class="container-xxl pb-5 pt-2">
         <div class="container">
