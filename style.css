@@ -4,6 +4,36 @@
     background-repeat: no-repeat;
     padding-bottom: 40px;
     background-size: cover;
+    position: relative;
+}
+
+#searchBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.384);
+    /* Adjust the opacity as needed */
+    z-index: 1;
+}
+
+#section {
+    position: relative;
+    z-index: 2;
+}
+
+h1.text-center.mt-5.display-2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p.text-center.mt-3.mb-5.container {
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Container for the search box and button */
@@ -22,17 +52,11 @@
 #location,
 #keyword {
     border: none;
-    color: #000000 !important;
-    border-bottom: 2px solid #000000 !important;
+    color: #fff !important;
+    border-bottom: 2px solid #fff !important;
     transition: background-color 0.3s ease;
 }
 
-#location:focus,
-#keyword:focus {
-    outline: none;
-    border-bottom: 2px solid #007bff;
-    background-color: transparent;
-}
 
 /* Ensure that columns take full width and center content */
 .col-md-8,
@@ -49,14 +73,16 @@
     max-width: 500px;
 }
 
+/* Nav bar */
 .navbar-nav .nav-link {
     font-family: 'Arial', sans-serif !important;
     font-weight: bold !important;
     text-transform: capitalize !important;
+    color: #fff !important;
 }
 
 .text-center.mt-5 {
-    color: #2b3940;
+    color: #fff;
 }
 
 .container-sm.primary-blue {
@@ -66,19 +92,28 @@
     padding: 0;
 }
 
+/* search container */
+
 .box1 {
     background-color: transparent;
     padding: 5px;
 }
 
 input[type="text"] {
-    background-color: transparent;
+    background-color: transparent !important;
     color: black;
+    padding: 10px;
+    /* border-radius: 5px; */
 }
+
+input[type="text"]::placeholder {
+    color: #ffffff;
+}
+
 
 .suggestions {
     margin-left: 10px;
-    color: #000000;
+    color: #ffffff;
     background-color: transparent;
 }
 
@@ -90,7 +125,7 @@ input[type="text"] {
 
 .searchBtn {
     background-color: #044175;
-    color: #fff;
+    color: #ffffff;
     width: 300px !important;
     font-size: 20px;
 }
@@ -99,6 +134,7 @@ input[type="text"] {
     background-color: #2b3940;
 }
 
+/* footer */
 .custom-padding {
     padding-top: 7rem;
 }
