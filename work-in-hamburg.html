@@ -62,12 +62,12 @@
             </nav>
             <!-- <div id="searchBox"> -->
             <section id="section">
-                <h1 class="text-center mt-5 display-2">Find your Perfect Job in <i><b style="color: #044175;"> Berlin
+                <h1 class="text-center mt-5 display-2">Find your Perfect Job in <i><b style="color: #044175;"> Hamburg
                         </b></i>
                 </h1>
                 <p class="text-center mt-3 mb-5 container" style="color: #2b3940; font-size: 22px; font-weight: 900;">
                     Browse the latest full-time and
-                    part-time job openings in Berlin
+                    part-time job openings in Hamburg
                 </p>
 
                 <!-- Search Start -->
@@ -199,7 +199,7 @@
         document.getElementById('searchButton').addEventListener('click', function () {
 
             const keyword = document.getElementById('keyword').value;
-            const location = "berlin";
+            const location = "hamburg";
             // Show loader and disable button
             const buttonText = document.getElementById('buttonText');
             const buttonLoader = document.getElementById('buttonLoader');
@@ -215,7 +215,7 @@
             });
         });
         document.addEventListener('DOMContentLoaded', function () {
-            const defaultLocation = "berlin"; // Default location to search
+            const defaultLocation = "hamburg"; // Default location to search
             const defaultKeyword = ""; // You can set a default keyword if needed
 
             searchJobs(defaultKeyword, defaultLocation).finally(() => {

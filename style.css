@@ -126,7 +126,7 @@ input[type="text"]::placeholder {
 .searchBtn {
     background-color: #044175;
     color: #ffffff;
-    width: 300px !important;
+    margin-top: 5px;
     font-size: 20px;
 }
 
