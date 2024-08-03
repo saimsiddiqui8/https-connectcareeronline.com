@@ -360,14 +360,20 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const defaultLocation = 'Germany';
+            const locationInput = document.getElementById('location');
+            locationInput.value = defaultLocation;
+            searchJobs('', defaultLocation);
+        });
+    
         document.getElementById('searchButton').addEventListener('click', function () {
-
             const keyword = document.getElementById('keyword').value;
             const location = document.getElementById('location').value;
             // Show loader and disable button
             const buttonText = document.getElementById('buttonText');
             const buttonLoader = document.getElementById('buttonLoader');
-
+    
             buttonText.classList.add('d-none');
             buttonLoader.classList.remove('d-none');
             this.disabled = true;
@@ -378,9 +384,10 @@
                 this.disabled = false;
             });
         });
+    
         async function searchJobs(keyword, location) {
             const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=20`;
-
+    
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -392,45 +399,44 @@
                 console.error('Error:', error);
             }
         }
-
+    
         function displayJobs(jobs) {
             const jobsContainer = document.getElementById('tab-2');
             const jobListing = document.getElementById('jobListing');
             jobsContainer.innerHTML = '';
-
+    
             if (jobs.length === 0) {
                 jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
             } else {
                 jobListing.innerHTML = '<h2 class="text-center mb-5 ">Job Listing</h2>';
-
             }
-
+    
             jobs.forEach(job => {
                 const jobElement = document.createElement('div');
                 jobElement.className = 'job-item p-4 mb-4';
                 jobElement.innerHTML = `
-                <div class="row g-4">
-                    <div class="col-sm-12 col-md-8 d-flex flex-row align-items-center">
-                        <div class="text-start ps-4">
-                            <h5 class="mb-3">${job.title} - ${job.category}</h5>
-                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt secondary-color-blue me-2"></i>${job.region.city}, ${job.region.country}</span>
-                            <span class="text-truncate me-3"><i class="far fa-clock secondary-color-blue me-2"></i>${job.job_type}</span>
-                            <span class="text-truncate me-3"><i class="fas fa-user-tie secondary-color-blue me-2"></i>${job.limit}</span>
-                            <span class="text-truncate me-0"><i class="far fa-money-bill-alt secondary-color-blue me-2"></i>${job.salary.min} - ${job.salary.max} ${job.salary.currency}</span>
+                    <div class="row g-4">
+                        <div class="col-sm-12 col-md-8 d-flex flex-row align-items-center">
+                            <div class="text-start ps-4">
+                                <h5 class="mb-3">${job.title} - ${job.category}</h5>
+                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt secondary-color-blue me-2"></i>${job.region.city}, ${job.region.country}</span>
+                                <span class="text-truncate me-3"><i class="far fa-clock secondary-color-blue me-2"></i>${job.job_type}</span>
+                                <span class="text-truncate me-3"><i class="fas fa-user-tie secondary-color-blue me-2"></i>${job.limit}</span>
+                                <span class="text-truncate me-0"><i class="far fa-money-bill-alt secondary-color-blue me-2"></i>${job.salary.min} - ${job.salary.max} ${job.salary.currency}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                    <div class="d-flex mb-3">
-                        <a href="${job.url}" target="_blank" class="btn primary-blue text-white apply-now-btn">Apply Now</a>
-                    </div>
-                    <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.date_updated).toLocaleDateString()}</small>
-                    </div>
-                </div>`;
+                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                            <div class="d-flex mb-3">
+                                <a href="${job.url}" target="_blank" class="btn primary-blue text-white apply-now-btn">Apply Now</a>
+                            </div>
+                            <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.date_updated).toLocaleDateString()}</small>
+                        </div>
+                    </div>`;
                 jobsContainer.appendChild(jobElement);
             });
-
         }
     </script>
+    
 </body>
 
 </html>
