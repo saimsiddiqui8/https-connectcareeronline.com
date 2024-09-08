@@ -280,7 +280,7 @@
                                     <img src="${featuredImageUrl}" class="card-img-top" alt="Blog Image">
                                     <h5 class="card-title text-dark mt-4">${post.title.rendered}</h5>
                                     <p class="card-text">${post.excerpt.rendered}</p>
-                                  <a href="blog-detail/${post.slug}" class="read-more fw-bold">Read more</a>
+                                  <a href="blog-detail.html?slug=${post.slug}" class="read-more fw-bold">Read more</a>
                                 </div>
                             `;
                                     blogContainer.innerHTML += blogPost;
@@ -293,7 +293,7 @@
                             <img src="${featuredImageUrl}" class="card-img-top" alt="Blog Image">
                             <h5 class="card-title text-dark mt-4">${post.title.rendered}</h5>
                             <p class="card-text">${post.excerpt.rendered}</p>
-                          <a href="blog-detail/${post.slug}" class="read-more fw-bold">Read more</a>
+                          <a href="blog-detail.html?slug=${post.slug}" class="read-more fw-bold">Read more</a>
                         </div>
                     `;
                             blogContainer.innerHTML += blogPost;
