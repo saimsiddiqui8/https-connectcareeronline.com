@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
+RewriteEngine On
+RewriteRule ^blog-detail\.html/(.+)$ blog-detail.html?slug=$1 [L,QSA]
+
 # Check if the requested file exists as .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
