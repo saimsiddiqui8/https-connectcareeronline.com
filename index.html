@@ -63,7 +63,6 @@
         .job-container {
             display: flex;
             flex-direction: column;
-            margin-left: 120px;
             gap: 20px;
         }
 
@@ -73,8 +72,7 @@
             border-radius: 12px;
             padding: 15px;
             padding-top: 3px;
-            width: 70%;
-            max-width: 90%;
+            width: 100%;
             background-color: #fff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -91,6 +89,7 @@
             color: #2c3e50;
             font-weight: 700;
         }
+
         .job-title:hover {
             font-size: 23px;
             color: #1e77c4;
@@ -462,16 +461,83 @@
 
     </div>
     <!-- </div> -->
+    <div class="container">
 
-    <!-- Jobs End -->
-    <div class="job-container" id="job-container"></div>
+        <div class="row overflow-hidden">
+            <div class="col-md-8 col-lg-8 col-sm-12 col-12">
+                <div class="job-container" id="job-container"></div>
+                <!-- Loader Element -->
+                <div class="loader" id="loader"></div>
+                <div class="text-center mt-3">
+                    <button class="job-link" style="border: none;" onClick="getMoreJobs()">Load More Jobs</button>
+                </div>
 
-    <!-- Loader Element -->
-    <div class="loader" id="loader"></div>
-    <div class="text-center mt-3">
-        <button class="job-link" style="border: none;" onClick="getMoreJobs()">Load More Jobs</button>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12 col-12">
+                <!-- home page content -->
+                <div>
+                    <section class="jobs-section">
+                        <h2>Top Paid Jobs in Germany</h2>
+                        <p>Germany is a popular spot for professionals looking for top paid jobs in Germany because of
+                            its
+                            strong
+                            economy and great living standards. Whether you're a local or an international talent, you
+                            can
+                            find
+                            attractive work choices with competitive earnings across many industries.
+                            Connectcareeronline
+                            provides a
+                            plethora of options to optimize your income potential, ranging from promising careers in
+                            technology
+                            and
+                            finance to specialized positions in other areas.
+                        </p>
+                        <h3>Part-Time Jobs in Germany</h3>
+                        <p>A part-time job in Germany is a great option for people who want to keep their schedule open.
+                            Whether
+                            you're
+                            a parent, a student, or just looking for extra money, these jobs can accommodate your
+                            demands.
+                            You
+                            can
+                            locate best paid jobs in Germany that meet your commitments and lifestyle, with options
+                            ranging
+                            from
+                            administrative to retail and hotels.
+                        </p>
+                        <h4>English-Speaking Jobs in Germany</h4>
+                        <p>English language speakers can find a plethora of options in Germany's diverse job market.
+                            There
+                            are
+                            lots
+                            of
+                            roles available in multinational corporations and industries that emphasize English
+                            competence
+                            if
+                            you're
+                            looking for English-speaking jobs in Germany.
+                        </p>
+                        <p>Find the best paid jobs in Germany that fits your career goals. For more information on the
+                            top
+                            paid
+                            jobs
+                            in
+                            Germany, remote jobs in Germany, part-time jobs in Germany, and English-speaking jobs in
+                            Germany,
+                            <b>Contact
+                                at <a href="mailto:info@connectcareeronline.com">info@connectcareeronline.com</a> and
+                                start
+                                your
+                                job
+                                search today! </b>
+                        </p>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
     <!-- Modal Structure -->
     <div id="job-modal" class="modal">
         <div class="modal-content">
@@ -489,46 +555,6 @@
         </div>
     </div>
 
-    <!-- home page content -->
-    <div class="container my-4">
-        <section class="jobs-section">
-            <h2>Top Paid Jobs in Germany</h2>
-            <p>Germany is a popular spot for professionals looking for top paid jobs in Germany because of its
-                strong
-                economy and great living standards. Whether you're a local or an international talent, you can find
-                attractive work choices with competitive earnings across many industries. Connectcareeronline
-                provides a
-                plethora of options to optimize your income potential, ranging from promising careers in technology
-                and
-                finance to specialized positions in other areas.
-            </p>
-            <h3>Part-Time Jobs in Germany</h3>
-            <p>A part-time job in Germany is a great option for people who want to keep their schedule open. Whether
-                you're
-                a parent, a student, or just looking for extra money, these jobs can accommodate your demands. You
-                can
-                locate best paid jobs in Germany that meet your commitments and lifestyle, with options ranging from
-                administrative to retail and hotels.
-            </p>
-            <h4>English-Speaking Jobs in Germany</h4>
-            <p>English language speakers can find a plethora of options in Germany's diverse job market. There are
-                lots
-                of
-                roles available in multinational corporations and industries that emphasize English competence if
-                you're
-                looking for English-speaking jobs in Germany.
-            </p>
-            <p>Find the best paid jobs in Germany that fits your career goals. For more information on the top paid
-                jobs
-                in
-                Germany, remote jobs in Germany, part-time jobs in Germany, and English-speaking jobs in Germany,
-                <b>Contact
-                    at <a href="mailto:info@connectcareeronline.com">info@connectcareeronline.com</a> and start your
-                    job
-                    search today! </b>
-            </p>
-        </section>
-    </div>
 
     <!-- Footer Start -->
     <div class="text-white footer wow fadeIn" data-wow-delay="0.1s">
