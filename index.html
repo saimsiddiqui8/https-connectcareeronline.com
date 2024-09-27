@@ -82,13 +82,18 @@
         }
 
         .job-card:hover {
-            transform: translateY(-8px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border: 3px solid #136bb8;
         }
 
         .job-title {
             font-size: 23px;
             color: #2c3e50;
+            font-weight: 700;
+        }
+        .job-title:hover {
+            font-size: 23px;
+            color: #1e77c4;
             font-weight: 700;
         }
 
@@ -103,14 +108,13 @@
         .job-date {
             font-size: 0.85em;
             color: #666;
-            margin-top: 6px;
         }
 
         /* Image Styling */
         .company-logo {
-            width: 65px;
-            height: 65px;
-            margin-right: 5px;
+            width: 50px;
+            height: 45px;
+            margin-right: 8px;
             border-radius: 5px;
             margin-bottom: 10px;
         }
@@ -468,19 +472,6 @@
         <button class="job-link" style="border: none;" onClick="getMoreJobs()">Load More Jobs</button>
     </div>
 
-    <!-- Jobs Start -->
-    <div class="container-xxl pb-5 pt-2">
-        <div class="container">
-            <div id="jobListing"></div>
-            <div class="tab-class ">
-                <div class="tab-content">
-                    <div id="tab-2">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal Structure -->
     <div id="job-modal" class="modal">
         <div class="modal-content">
@@ -804,17 +795,16 @@
                 <div class="d-flex">
                     <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
                         <div>
-                            <div class="job-title">${title}</div>
                             <div class="job-company">Company: ${companyName}</div>
-                        </div>
-                </div>
+                            <div class="job-location">Location: ${location}</div>
+                            </div>
+                            </div>
+                <div class="job-title">${title}</div>
                 <div class="job-description">${description}</div>
-                <div class="job-location">Location: ${location}</div>
                 <a href="${jobUrl}" target="_blank" class="job-link" id="viewJobLink">Apply Now</a>
                 `;
 
                 jobCard.addEventListener('click', (event) => {
-                    // Only open the modal when not clicking on the link
                     if (event.target.id !== "viewJobLink") {
                         clickFunc();
                     }
@@ -861,84 +851,8 @@
             fetchJobs(currentPage, limit);
         };
 
-
         // Initial fetch
         fetchJobs(currentPage, limit);
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const defaultLocation = 'Germany';
-            const locationInput = document.getElementById('location');
-            locationInput.value = defaultLocation;
-            searchJobs('', defaultLocation);
-        });
-
-        document.getElementById('searchButton').addEventListener('click', function () {
-            const keyword = document.getElementById('keyword').value;
-            const location = document.getElementById('location').value;
-            // Show loader and disable button
-            const buttonText = document.getElementById('buttonText');
-            const buttonLoader = document.getElementById('buttonLoader');
-
-            buttonText.classList.add('d-none');
-            buttonLoader.classList.remove('d-none');
-            this.disabled = true;
-            searchJobs(keyword, location).finally(() => {
-                // Hide loader and enable button
-                buttonText.classList.remove('d-none');
-                buttonLoader.classList.add('d-none');
-                this.disabled = false;
-            });
-        });
-
-        async function searchJobs(keyword, location) {
-            const url = `https://api.connectcareeronline.com/api/v1/job/job/search?search_string=${encodeURIComponent(keyword)}&location=${encodeURIComponent(location)}&limit=10`;
-
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                console.log(response)
-                const data = await response.json();
-                displayJobs(data.jobs);
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        function displayJobs(jobs) {
-            const jobsContainer = document.getElementById('tab-2');
-            const jobListing = document.getElementById('jobListing');
-            jobsContainer.innerHTML = '';
-
-            if (jobs.length === 0) {
-                jobsContainer.innerHTML = '<h2 class="text-center my-4">No Jobs Found</h2>';
-            } else {
-                jobListing.innerHTML = '<h2 class="text-center mb-5 ">Job Listing</h2>';
-            }
-
-            jobs.forEach(job => {
-                const jobElement = document.createElement('div');
-                jobElement.className = 'job-item p-4 mb-4';
-                jobElement.innerHTML = `
-                    <div class="row g-4">
-                       <div class="col-sm-12 col-md-8 d-flex flex-row align-items-center" onclick="window.open('${job.url}', '_blank')" style="cursor: pointer;">
-                            <div class="text-start ps-4">
-                                <h5 class="mb-3">${job.title} - ${job.category}</h5>
-                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt secondary-color-blue me-2"></i>${job.region.city}, ${job.region.country}</span>
-                                </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                            <div class="d-flex mb-3">
-                                <a href="${job.url}" target="_blank" class="btn primary-blue text-white apply-now-btn">Apply Now</a>
-                            </div>
-                            <small class="text-truncate"><i class="far fa-calendar-alt secondary-color-blue me-2"></i>Posted At: ${new Date(job.date_updated).toLocaleDateString()}</small>
-                        </div>
-                    </div>`;
-                jobsContainer.appendChild(jobElement);
-            });
-        }
     </script>
 </body>
 
