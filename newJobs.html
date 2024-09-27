@@ -15,50 +15,41 @@
             padding: 0;
         }
 
-        h1 {
-            text-align: center;
-            padding: 20px;
-            background-color: #3498db;
-            color: #fff;
-            margin: 0;
-            font-weight: bold;
-        }
-
         /* Job Container and Job Card */
         .job-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
-            margin: 20px;
         }
 
         .job-card {
             border: none;
             cursor: pointer;
             border-radius: 12px;
-            padding: 20px;
-            width: 320px;
+            padding: 15px;
+            width: 100%;
+            max-width: 90%;
             background-color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
         }
 
         .job-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         .job-title {
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .job-company {
-            font-size: 1em;
+            font-size: 0.9em;
             color: #7f8c8d;
         }
 
@@ -66,25 +57,23 @@
         .job-category,
         .job-sector,
         .job-date {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #666;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         /* Image Styling */
         .company-logo {
-            width: 100px;
-            height: auto;
+            width: 50px;
+            height: 50px;
             border-radius: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         /* Description Styling */
         .job-description {
             margin-top: 10px;
-            font-size: 0.9em;
-            height: 50px;
-            overflow: hidden;
+            font-size: 0.95em;
             position: relative;
         }
 
@@ -95,22 +84,22 @@
         .more-link {
             color: #3498db;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 0.85em;
             display: block;
             text-align: left;
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
         /* Buttons Styling */
         .job-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
+            margin-top: 15px;
+            padding: 10px 16px;
             background-color: #3498db;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9em;
+            border-radius: 20px;
+            font-size: 0.95em;
             font-weight: bold;
             transition: background-color 0.3s;
         }
@@ -147,49 +136,22 @@
         .modal-content {
             background-color: #fff;
             margin: 5% auto;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             width: 80%;
             max-height: 80vh;
-            /* Adjust as needed */
             overflow-y: auto;
-            /* Enable vertical scrollbar */
-            max-width: 800px;
+            max-width: 700px;
             position: relative;
         }
 
         .close-button {
             position: absolute;
             top: 10px;
-            right: 20px;
-            font-size: 24px;
+            right: 15px;
+            font-size: 20px;
             cursor: pointer;
         }
-
-        .modal-logo {
-            width: 100px;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .modal-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9em;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .modal-link:hover {
-            background-color: #1e77c4;
-        }
-
 
         @keyframes spin {
             0% {
@@ -216,79 +178,14 @@
             }
         }
     </style>
-
-
-    <!-- Favicon -->
-    <link href="img/favicon.png" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="canonical" href="https://connectcareeronline.com/">
-
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
-        <a href="/" class="navbar-brand d-flex align-items-center text-center py-2 px-4 px-lg-5">
-            <img class="py-4" src="./img/navbarLogo.png" width="80px" alt="logo">
-        </a>
-        <button type="bu tton" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link active text-dark" style="color: #000 !important;">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" style="color: #000 !important;" class="nav-link dropdown-toggle" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Jobs By City
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="jobs-in-berlin">Jobs in Berlin</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-essen">Jobs in Essen</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-munich">Jobs in Munich</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-bonn">Jobs in Bonn</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-dusseldorf">Jobs in dusseldorf</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-falkensee">Jobs in Falkensee</a> </li>
-                        <li><a class="dropdown-item" href="jobs-in-frankfurt">Jobs in Frankfurt</a> </li>
-                        <li><a class="dropdown-item" href="jobs-in-lunen">Jobs in Lünen</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-hamburg">Jobs in Hamburg</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-potsdam">Jobs in Potsdam</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-cologne">Jobs in Cologne</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-nurtingen">Jobs in Nürtingen</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-vienna">Jobs in Vienna </a></li>
-                        <li><a class="dropdown-item" href="jobs-in-wurzburg">Jobs in Würzburg</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-zurich">Jobs in Zürich</a></li>
-                        <li><a class="dropdown-item" href="jobs-in-stuttgart">Jobs in Stuttgart</a></li>
-                    </ul>
-                </div>
-                <a href="contact" style="color: #000 !important;" class="nav-item nav-link">Contact</a>
-                <a href="blog" style="color: #000 !important;" class="nav-item nav-link">Blogs</a>
-                <a href="newJobs" style="color: #000 !important;" class="nav-item nav-link">New Jobs</a>
-            </div>
-        </div>
-    </nav>
-
     <h1>Job Listings</h1>
-    <div class="job-container" id="job-container"></div>
-
+    <div class="job-container" id="job-container">
+        <!-- Job Cards will go here -->
+    </div>
+   
     <!-- Loader Element -->
     <div class="loader" id="loader"></div>
 
@@ -394,7 +291,7 @@
                 const jobSector = job.getElementsByTagName('sector')[0]?.textContent || 'Not specified';
                 const companyLogo = job.getElementsByTagName('company_logo')[0]?.textContent || 'https://via.placeholder.com/150';
 
-                description = decodeHtml(description).slice(0, 150) + '...';
+                description = decodeHtml(description).slice(0, 250) + '...';
 
                 const jobCard = document.createElement('div');
                 jobCard.classList.add('job-card');
@@ -405,11 +302,11 @@
                     <div class="job-company">Company: ${companyName}</div>
                     <img src="${companyLogo}" alt="Company Logo" class="company-logo" />
                     <div class="job-location">Location: ${location}</div>
-                    <p><strong>Work Type:</strong> ${workType}</p>
-                    <p><strong>Address:</strong> ${jobAddress}</p>
-                    <p><strong>Category:</strong> ${jobCategory}</p>
-                    <p><strong>Sector:</strong> ${jobSector}</p>
-                    <div class="job-description">${description} <span class="more-link">More...</span></div>
+                    <p>Work Type:</strong> ${workType}</p>
+                    <p>Address:</strong> ${jobAddress}</p>
+                    <p>Category:</strong> ${jobCategory}</p>
+                    <p>Sector:</strong> ${jobSector}</p>
+                    <div class="job-description">${description}</div>
                     <div class="full-description" style="display:none;">${fullDescription}</div>
                     <div>Date posted: ${date}</div>
                     <a href="${jobUrl}" target="_blank" class="job-link">View Job</a>
@@ -450,15 +347,6 @@
             txt.innerHTML = html;
             return txt.value;
         }
-
-        // Infinite scrolling
-        window.addEventListener('scroll', () => {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight / 2 && !isLoading) {
-                currentPage++;
-                fetchJobs(currentPage, limit);
-            }
-        });
-
 
         // Initial fetch
         fetchJobs(currentPage, limit);
