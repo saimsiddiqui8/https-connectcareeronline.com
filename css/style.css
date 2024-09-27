@@ -45,6 +45,9 @@
     color: #0b71d9 !important;
     font-size: 18px !important;
 }
+.cityPara:hover{
+    color: #044175 !important;
+}
 
 .secondary-blue-light {
     background-color: #d1def0;
