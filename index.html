@@ -256,6 +256,20 @@
                 margin: 0 10px;
             }
         }
+        .tags {
+            display: inline-block;
+            background-color: rgba(248, 248, 248, 0.2);
+            border-radius: 12px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .tags:hover {
+            background-color: #545151;
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -355,9 +369,16 @@
                                             role="status" aria-hidden="true"></span>
                                     </button>
                                 </div>
-                                <div class="suggestions ">
-                                    <p>Trending Keywords: &nbsp; &nbsp;<span class="trending-keywords">Software
-                                            Engineer, Graphic Designer, Game Developer</span></p>
+                                <div class="suggestions">
+                                    <p>Trending Keywords: &nbsp; &nbsp;
+                                        <span class="trending-keywords">
+                                            <span class="tags">It jobs</span>
+                                            <span class="tags">Administration jobs</span>
+                                            <span class="tags">Sales Jobs</span>
+                                            <span class="tags">Management Jobs</span>
+                                            <span class="tags">Marketing Jobs</span>
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -691,7 +712,6 @@
                             <a class="d-block mb-2 btn btn-link" href="jobs-in-hamburg">Jobs in Hamburg</a>
                         </div>
                         <div class="col-md-6">
-
                             <a class="d-block mb-2 btn btn-link" href="jobs-in-potsdam">Jobs in Potsdam</a>
                             <a class="d-block mb-2 btn btn-link" href="jobs-in-munich">Jobs in Cologne</a>
                             <a class="d-block mb-2 btn btn-link" href="jobs-in-nurtingen">Jobs in Nürtingen</a>
@@ -829,7 +849,7 @@
         let currentPage = 1;
         const limit = 15;
         let isLoading = false;
-        async function jobFilter(kw,page = 1, limit = 15) {
+        async function jobFilter(kw, page = 1, limit = 15) {
             try {
                 const response = await fetch(`https://api.connectcareeronline.com/api/v1/job/stepstone?page=${page}&limit=${limit}`);
                 if (!response.ok) throw new Error('Failed to fetch jobs');

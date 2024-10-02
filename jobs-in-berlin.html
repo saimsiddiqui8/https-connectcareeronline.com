@@ -214,6 +214,20 @@
             transition: background-color 0.3s ease;
         }
 
+        .tags {
+            display: inline-block;
+            background-color: rgba(248, 248, 248, 0.2);
+            border-radius: 12px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .tags:hover {
+            background-color: #545151;
+            cursor: pointer;
+        }
 
         @keyframes spin {
             0% {
@@ -335,8 +349,17 @@
                                     </button>
                                 </div>
                                 <div class="suggestions ">
-                                    <p>Trending Keywords: &nbsp; &nbsp;<span class="trending-keywords">Software
-                                            Engineer, Graphic Designer, Game Developer</span></p>
+                                   <div class="suggestions">
+                                    <p>Trending Keywords: &nbsp; &nbsp;
+                                        <span class="trending-keywords">
+                                            <span class="tags">It jobs</span>
+                                            <span class="tags">Administration jobs</span>
+                                            <span class="tags">Sales Jobs</span>
+                                            <span class="tags">Management Jobs</span>
+                                            <span class="tags">Marketing Jobs</span>
+                                        </span>
+                                    </p>
+                                </div>
                                 </div>
                             </div>
                         </div>
