@@ -499,7 +499,6 @@
                     <div class="container">
                         <div id="jobListing"></div>
                         <div class="tab-class text-center ">
-
                             <div class="tab-content">
                                 <div id="tab-2">
                                 </div>
@@ -806,7 +805,7 @@
                 jobElement.className = 'job-item p-4 mb-4';
                 jobElement.innerHTML = `
                 <div class="row g-4">
-                   <div class="col-sm-12 col-md-8 d-flex flex-row align-items-center" onclick="window.open('${job.url}', '_blank')" style="cursor: pointer;">
+                   <div class="col-sm-12 col-md-8 d-flex flex-row align-items-center" onClick="window.open('${job.url}', '_blank')" style="cursor: pointer;">
                         <div class="text-start ps-4">
                             <h5 class="mb-3">${job.title} - ${job.category}</h5>
                             <span class="text-truncate me-3"><i class="fa fa-map-marker-alt secondary-color-blue me-2"></i>${job.region.city}, ${job.region.country}</span>
