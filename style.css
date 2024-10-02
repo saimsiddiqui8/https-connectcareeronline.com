@@ -115,7 +115,6 @@ p.text-center.mt-3.mb-5.container {
 .form-control,
 .btn {
     width: 100%;
-    max-width: 500px;
 }
 
 /* Nav bar */
